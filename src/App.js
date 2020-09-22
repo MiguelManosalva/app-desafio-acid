@@ -1,26 +1,21 @@
-import React from 'react';
-import './App.css';
-import {
-  HashRouter as RouterH,
-  Route,
-  Switch,
-} from "react-router-dom";
+import React from "react";
+import "./App.css";
+import { Router } from "react-router-dom";
+import { Provider } from "react-redux";
 
-import { RUTAS } from "./config/rutas";
+import Main from "./app/Main";
+
+import store from "./store/store";
+import { createBrowserHistory as createHistory } from "history";
+const history = createHistory();
 
 function App() {
   return (
-    <RouterH>
-      <Switch>
-        {RUTAS.map((route, i) => 
-          <Route
-            key={i}
-            path={route.path}
-            render={() => <route.component />}
-          />
-        )}
-      </Switch>
-    </RouterH>
+    <Provider store={store}>
+      <Router history={history}>
+        <Main />
+      </Router>
+    </Provider>
   );
 }
 

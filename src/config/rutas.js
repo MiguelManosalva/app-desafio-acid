@@ -1,9 +1,9 @@
-import Main from "../app/Main";
+import Albums from "../app/pages/albums/Albums";
 
 export const RUTAS = [
   {
     path: "/",
-    component: Main,
+    component: Albums,
     private: false,
   },
 ];

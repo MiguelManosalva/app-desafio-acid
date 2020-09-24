@@ -1,0 +1,36 @@
+@import "./components/variables";
+@import "./components/card";
+@import "./components/button";
+@import "./components/grid";
+
+* {
+  margin: 0;
+  overflow-x: hidden;
+}
+
+body {
+  background-color: $bgBody;
+  color: $colorText;
+  font-family: "Roboto", sans-serif;
+}
+
+.container {
+  margin: 2rem;
+}
+
+.title {
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.sub-title {
+  font-size: 14px;
+  color: #8b88b1;
+  margin-top: 5px;
+  display: block;
+}
+
+.centered {
+  justify-content: right;
+  display: flex;
+}

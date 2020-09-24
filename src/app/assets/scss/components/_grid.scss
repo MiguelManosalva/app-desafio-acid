@@ -1,0 +1,17 @@
+@function columns($columns, $total-columns) {
+  @return percentage($columns / $total-columns);
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
+
+  @for $index from 1 through 12 {
+    .col-#{$index} {
+      flex: 0 0 columns($index, 12);
+      width: columns($index, 12);
+    }
+  }
+}

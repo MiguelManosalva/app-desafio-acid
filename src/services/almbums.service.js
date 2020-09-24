@@ -21,3 +21,8 @@ export function listarAlbums(limit = 10) {
     }
   `;
 }
+
+export function eliminarAlbum(idAlbum) {
+
+}
+

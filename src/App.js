@@ -1,5 +1,4 @@
 import React from "react";
-import "./App.css";
 import { Router } from "react-router-dom";
 import { Provider } from "react-redux";
 

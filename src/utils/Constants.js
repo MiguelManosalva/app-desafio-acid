@@ -7,6 +7,7 @@ export const VALIDACION_MINIMO_CARACTERES =
 
 export const STYLE_MODAL = {
   content: {
+    width: "50%",
     top: "50%",
     left: "50%",
     right: "auto",

@@ -30,6 +30,13 @@ body {
   display: block;
 }
 
+.alert-title {
+  font-size: 12px;
+  color: #d05050;
+  margin-top: 10px;
+  display: block;
+}
+
 .sub-author {
   font-size: 14px;
   color: #8b88b1;
@@ -43,7 +50,7 @@ body {
   display: block;
 }
 
-.centered {
+.right {
   justify-content: right;
   display: flex;
 }
@@ -51,11 +58,11 @@ body {
 .login-form {
   margin-top: 20px;
 
-  input {
-    margin-bottom: 20px;
-    width: 416px;
+  .input-field {
+    margin-top: 20px;
+    width: 100%;
     height: 40px;
-    font-size: em(20);
+    font-size: 14px;
     text-indent: 15px;
     color: $gray2;
     background: $gray1;
@@ -71,7 +78,29 @@ body {
     }
   }
 
-  input &[value] {
+  .textarea-field {
+    font-family: inherit;
+    margin-top: 20px;
+    width: 100%;
+    height: 20vh;
+    font-size: 14px;
+    padding: 15px;
+    color: $gray2;
+    background: $gray1;
+    border: 1px solid $gray2;
+    border-radius: 4px;
+    display: block;
+
+    &[value],
+    &:focus,
+    &:active {
+      color: $gray2;
+      border: 1px solid #fff;
+    }
+  }
+
+  .input-field,
+  .textarea-field &[value] {
     color: $gray2;
     border: 1px solid #fff;
   }

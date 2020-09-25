@@ -1,6 +1,18 @@
 
+@mixin obtainBtn {
+    color: #FFF;
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+}
+
 .btn {
     cursor: pointer;
+    border: 0;
     margin: 5px;
     border-radius: 20px;
     font-size: 16px;
@@ -11,14 +23,24 @@
     position: relative;
 }
 
-.btn-default {
-    color: #FFF;
+.btn-primary {
+    background: #8e4cff;
+    @include obtainBtn()
+}
+
+.btn-secondary {
     background: #FF4C60;
-    display: inline-block;
-    vertical-align: middle;
-    position: relative;
-    -webkit-transform: perspective(1px) translateZ(0);
-    transform: perspective(1px) translateZ(0);
-    -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0);
-    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    @include obtainBtn()
+}
+
+.btn-primary-option {
+    background: #8e4cff;
+    padding: 10px 12px;
+    @include obtainBtn()
+}
+
+.btn-secondary-option {
+    background: #FF4C60;
+    padding: 10px 12px;
+    @include obtainBtn()
 }

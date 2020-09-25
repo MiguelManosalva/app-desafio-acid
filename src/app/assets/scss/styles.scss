@@ -20,17 +20,59 @@ body {
 
 .title {
   font-weight: 600;
-  font-size: 20px;
+  font-size: 24px;
 }
 
-.sub-title {
+.body-title {
+  font-size: 18px;
+  color: #ceced0;
+  margin-top: 10px;
+  display: block;
+}
+
+.sub-author {
   font-size: 14px;
   color: #8b88b1;
-  margin-top: 5px;
+  margin-top: 25px;
+  display: block;
+}
+
+.sub-comment {
+  font-size: 14px;
+  color: #8b88b1;
   display: block;
 }
 
 .centered {
   justify-content: right;
   display: flex;
+}
+
+.login-form {
+  margin-top: 20px;
+
+  input {
+    margin-bottom: 20px;
+    width: 416px;
+    height: 40px;
+    font-size: em(20);
+    text-indent: 15px;
+    color: $gray2;
+    background: $gray1;
+    border: 1px solid $gray2;
+    border-radius: 4px;
+    display: block;
+
+    &[value],
+    &:focus,
+    &:active {
+      color: $gray2;
+      border: 1px solid #fff;
+    }
+  }
+
+  input &[value] {
+    color: $gray2;
+    border: 1px solid #fff;
+  }
 }

@@ -1,43 +1,33 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
+import { guardar_modal, guardar_post } from "../../../reducer/reducer";
 import { capitalize } from "../../../utils/Functions";
-import FormPost from "./form-post/FormPost";
 
 class Post extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      post: props.data,
-      modalEditar: false,
-      modalEliminar: false,
+      post: props.data
     };
   }
 
   editarPost = () => {
-    this.setState({ modalEditar: true });
+    this.props.guardar_modal(true);
+    this.props.guardar_post(this.props.data);
   };
 
   eliminarPost = () => {
-    this.setState({ modalEliminar: true });
+    // Eliminar
   };
 
   cerrarModal = () => {
-    this.setState({ modalEditar: false });
+    guardar_modal(false);
   };
 
   render() {
     return (
       <React.Fragment>
-        {/* MODAL FORM EDICION */}
-        {this.state.modalEditar && (
-          <FormPost
-            data={this.state.post}
-            isModalOpen={this.state.modalEditar}
-            cerrarModal={this.cerrarModal}
-          />
-        )}
-
         {/* CARD POST */}
         <div className="card">
           <div className="card-body">
@@ -76,4 +66,4 @@ const mapStateToProps = (state) => ({
   store: state,
 });
 
-export default withRouter(connect(mapStateToProps, {})(Post));
+export default withRouter(connect(mapStateToProps, { guardar_post, guardar_modal })(Post));

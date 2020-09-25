@@ -1,13 +1,17 @@
 /*************************
  *  TYPES                *
  *************************/
-const GUARDAR_ALBUMS = "GUARDAR_ALBUMS";
+const GUARDAR_POSTS = "GUARDAR_POSTS";
+const GUARDAR_POST = "GUARDAR_POST";
+const GUARDAR_MODAL = "GUARDAR_MODAL";
 
 /*************************
  *  STATE                *
  *************************/
 const initialState = {
-  albums: null,
+  posts: [],
+  post: null,
+  modal: false,
 };
 
 /*************************
@@ -15,10 +19,20 @@ const initialState = {
  *************************/
 export default function reducer(state = initialState, action) {
   switch (action.type) {
-    case GUARDAR_ALBUMS:
+    case GUARDAR_POSTS:
       return {
         ...state,
-        albums: action.payload,
+        posts: action.payload,
+      };
+    case GUARDAR_POST:
+      return {
+        ...state,
+        post: action.payload,
+      };
+    case GUARDAR_MODAL:
+      return {
+        ...state,
+        modal: action.payload,
       };
 
     default:
@@ -29,9 +43,23 @@ export default function reducer(state = initialState, action) {
 /*************************
  *  ACTIONS              *
  *************************/
-export const guardar_albums = (data) => (dispatch) => {
+export const guardar_posts = (data) => (dispatch) => {
   dispatch({
-    type: GUARDAR_ALBUMS,
+    type: GUARDAR_POSTS,
+    payload: data,
+  });
+};
+
+export const guardar_post = (data) => (dispatch) => {
+  dispatch({
+    type: GUARDAR_POST,
+    payload: data,
+  });
+};
+
+export const guardar_modal = (data) => (dispatch) => {
+  dispatch({
+    type: GUARDAR_MODAL,
     payload: data,
   });
 };

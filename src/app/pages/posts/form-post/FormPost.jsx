@@ -8,6 +8,8 @@ import Modal from "react-modal";
 import { STYLE_MODAL } from "../../../../utils/Constants";
 import { INITIAL_VALUES, SCHEMA_VALIDATIONS } from "./ValidationsFormPost";
 import { capitalize } from "../../../../utils/Functions";
+// import { useMutation } from "@apollo/client";
+
 
 class FormPost extends Component {
   constructor(props) {
@@ -22,7 +24,17 @@ class FormPost extends Component {
   }
 
   enviarForm = (values) => {
-    console.log(values);
+    const { post } =  this.props.store.reducer;
+
+    // Update
+    if(post){
+      // updateTodo({ variables: { id: post.id, body: "asdasd" } });
+      // const [updateTodo] = useMutation(UPDATE_POST);
+    } 
+    // Create
+    else {
+    
+    }
   };
 
   render() {
@@ -37,7 +49,7 @@ class FormPost extends Component {
           initialValues={this.state.initialValues}
           validationSchema={SCHEMA_VALIDATIONS}
           onSubmit={(values) => {
-            console.log("values::: ", values);
+            this.enviarForm(values)
           }}
         >
           {({ values, errors, touched }) => (
@@ -64,10 +76,10 @@ class FormPost extends Component {
                 value={capitalize(values.body)}
               />
               {errors.body && touched.body ? (
-                <div className="alert-body">{errors.body}</div>
+                <div className="alert-title">{errors.body}</div>
               ) : null}
 
-              <div className="right">
+              <div className="right container-x">
                 <div
                   className="btn btn-secondary"
                   onClick={() => this.state.cerrarModal()}
@@ -77,7 +89,6 @@ class FormPost extends Component {
                 <button
                   type="submit"
                   className="btn btn-primary"
-                  // onClick={() => this.enviarForm(values)}
                 >
                   <i className="fa fa-save" aria-hidden="true"></i> Guardar
                 </button>
